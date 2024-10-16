@@ -33,14 +33,17 @@ int main(int argc, char *argv[])
     }
 
     char line[1000];
+    int count1 = 0;
+    int count2 = 0;
     while (fgets(line, sizeof(line), srcFile) != NULL)
-    {  
+    {
         if (strlen(line) < 20)
         {
             for (int i=0; line[i] != '\0'; i++)
             {
                 line[i] = toupper(line[i]);
             }
+            count1++;
             fprintf(destFile1, "%s", line);
         }
         
@@ -50,10 +53,13 @@ int main(int argc, char *argv[])
             {
                 line[i] = tolower(line[i]);
             }
+            count2++;
             fprintf(destFile2, "%s", line);
         }
         
     }
+    printf("%d lines written to short.txt\n", count1);
+    printf("%d lines written to long.txt\n", count2);
 
     fclose(srcFile);
     fclose(destFile1);
