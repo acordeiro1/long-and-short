@@ -58,10 +58,11 @@ int main(int argc, char *argv[])
         }
         
     }
-    printf("%d lines written to short.txt\n", count1);
-    printf("%d lines written to long.txt\n", count2);
 
     fclose(srcFile);
     fclose(destFile1);
     fclose(destFile2);
+
+    printf("%d lines written to short.txt\n", count1);
+    printf("%d lines written to long.txt\n", count2);
 }
